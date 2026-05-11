@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madimi Chaitanya Sai | Full Stack Developer</title>
+    
+    <!-- Tailwind CSS (CDN for Simplicity) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#0a0a0f',
+                        card: '#13131e',
+                        accent: {
+                            purple: '#6c63ff',
+                            blue: '#3b82f6',
+                            green: '#22c55e'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- DevIcons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-background text-white antialiased overflow-x-hidden selection:bg-accent-purple selection:text-white">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-5">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-extrabold tracking-tight text-white">
+                Chaitanya<span class="text-accent-purple">.</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex gap-8">
+                <a href="#home" class="nav-link text-white text-sm font-medium transition-colors relative group">
+                    Home
+                    <span class="absolute -bottom-1 left-0 h-[2px] bg-accent-purple transition-all duration-300 w-full"></span>
+                </a>
+                <a href="#about" class="nav-link text-gray-400 hover:text-white text-sm font-medium transition-colors relative group">
+                    About
+                    <span class="absolute -bottom-1 left-0 h-[2px] bg-accent-purple transition-all duration-300 w-0 group-hover:w-full"></span>
+                </a>
+                <a href="#skills" class="nav-link text-gray-400 hover:text-white text-sm font-medium transition-colors relative group">
+                    Skills
+                    <span class="absolute -bottom-1 left-0 h-[2px] bg-accent-purple transition-all duration-300 w-0 group-hover:w-full"></span>
+                </a>
+                <a href="#projects" class="nav-link text-gray-400 hover:text-white text-sm font-medium transition-colors relative group">
+                    Projects
+                    <span class="absolute -bottom-1 left-0 h-[2px] bg-accent-purple transition-all duration-300 w-0 group-hover:w-full"></span>
+                </a>
+                <a href="#competitive" class="nav-link text-gray-400 hover:text-white text-sm font-medium transition-colors relative group">
+                    Competitive
+                    <span class="absolute -bottom-1 left-0 h-[2px] bg-accent-purple transition-all duration-300 w-0 group-hover:w-full"></span>
+                </a>
+                <a href="#certifications" class="nav-link text-gray-400 hover:text-white text-sm font-medium transition-colors relative group">
+                    Certifications
+                    <span class="absolute -bottom-1 left-0 h-[2px] bg-accent-purple transition-all duration-300 w-0 group-hover:w-full"></span>
+                </a>
+                <a href="#contact" class="nav-link text-gray-400 hover:text-white text-sm font-medium transition-colors relative group">
+                    Contact
+                    <span class="absolute -bottom-1 left-0 h-[2px] bg-accent-purple transition-all duration-300 w-0 group-hover:w-full"></span>
+                </a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button id="menu-btn" class="md:hidden text-gray-300 hover:text-white">
+                <i id="menu-icon" data-lucide="menu"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden fixed inset-0 top-[70px] bg-background/95 backdrop-blur-xl flex-col items-center pt-10 gap-8 h-screen border-t border-white/5">
+            <a href="#home" class="text-xl font-semibold text-gray-300 hover:text-white">Home</a>
+            <a href="#about" class="text-xl font-semibold text-gray-300 hover:text-white">About</a>
+            <a href="#skills" class="text-xl font-semibold text-gray-300 hover:text-white">Skills</a>
+            <a href="#projects" class="text-xl font-semibold text-gray-300 hover:text-white">Projects</a>
+            <a href="#competitive" class="text-xl font-semibold text-gray-300 hover:text-white">Competitive</a>
+            <a href="#certifications" class="text-xl font-semibold text-gray-300 hover:text-white">Certifications</a>
+            <a href="#contact" class="text-xl font-semibold text-gray-300 hover:text-white">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex flex-col lg:flex-row items-center justify-between pt-24 pb-12 gap-12">
+            <!-- Left Text -->
+            <div class="flex-1 max-w-2xl z-10 reveal-left">
+                <h3 class="text-accent-purple font-semibold text-lg md:text-xl mb-4">Hi, I'm</h3>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 tracking-tight">
+                    M CHAITANYA SAI
+                </h1>
+                <h2 class="text-2xl md:text-3xl text-gray-400 font-medium mb-8">
+                    Full Stack Developer <span class="text-accent-purple mx-2">|</span> CSE Student
+                </h2>
+                <p class="text-lg text-gray-400 mb-10 max-w-lg leading-relaxed">
+                    A passionate Computer Science student at Vignan's Institute of Information technology, building real-world web applications and solving algorithmic challenges.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#projects" class="bg-accent-purple hover:bg-purple-600 text-white px-8 py-3 rounded-lg font-semibold flex items-center gap-2 transition-all duration-300 hover:shadow-[0_0_20px_rgba(108,99,255,0.4)] hover:-translate-y-1">
+                        View My Projects <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="bg-transparent border border-gray-600 text-gray-300 hover:text-white hover:border-accent-purple hover:bg-accent-purple/10 px-8 py-3 rounded-lg font-semibold flex items-center gap-2 transition-all duration-300">
+                        <i data-lucide="download" class="w-5 h-5"></i> Download Resume
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Photo Container -->
+            <div class="flex-1 w-full max-w-md z-10 reveal-right flex justify-center items-center">
+                <div class="relative w-72 h-72 md:w-80 md:h-80 rounded-full border-4 border-accent-purple/30 p-2 shadow-[0_0_30px_rgba(108,99,255,0.2)] transform transition-transform duration-500 hover:scale-105 hover:rotate-3">
+                    <div class="w-full h-full rounded-full overflow-hidden border border-white/10">
+                        <img src="myphoto.jpeg" alt="Madimi Chaitanya Sai" class="w-full h-full object-cover object-[center_15%]" />
+                    </div>
+                    <!-- Decorative Elements -->
+                    <div class="absolute -top-4 -right-4 w-20 h-20 bg-accent-blue/20 rounded-full blur-2xl"></div>
+                    <div class="absolute -bottom-6 -left-6 w-24 h-24 bg-accent-purple/20 rounded-full blur-2xl"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-24 relative z-10 reveal">
+            <h2 class="section-title text-white">About Me</h2>
+            <div class="max-w-3xl mx-auto mt-16 text-center">
+                <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-accent-purple/50 shadow-[0_0_20px_rgba(108,99,255,0.3)] mb-8 transition-transform duration-300 hover:scale-105">
+                    <img src="myphoto.jpeg" alt="Madimi Chaitanya Sai" class="w-full h-full object-cover object-[center_15%]" />
+                </div>
+                <p class="text-xl text-gray-300 leading-relaxed text-justify md:text-center">
+                    Hi, I’m Chaitanya — a <strong class="text-white font-semibold">Computer Science Engineering student (2024–2028)</strong> at Vignan's Institute of Information Technology passionate about software development, DSA, and building modern tech projects. I enjoy solving problems, learning new technologies, and turning ideas into real applications. Currently focused on improving my development skills, strengthening my problem-solving skills, and preparing for opportunities in the tech industry.
+                </p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-24 relative z-10 reveal">
+            <h2 class="section-title text-white">Skills & Technologies</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+                <!-- Languages -->
+                <div class="bg-card border border-white/5 rounded-2xl p-8 card-hover">
+                    <div class="flex items-center gap-3 mb-6">
+                        <i data-lucide="code-2" class="text-accent-purple w-6 h-6"></i>
+                        <h3 class="text-xl font-bold text-white">Languages</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="flex items-center gap-2 bg-white/5 border border-white/10 hover:border-accent-purple hover:bg-accent-purple/10 transition-all duration-300 px-4 py-2 rounded-full cursor-default">
+                            <i class="devicon-java-plain colored text-lg"></i>
+                            <span class="text-sm font-medium text-gray-300">Java</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white/5 border border-white/10 hover:border-accent-purple hover:bg-accent-purple/10 transition-all duration-300 px-4 py-2 rounded-full cursor-default">
+                            <i class="devicon-python-plain colored text-lg"></i>
+                            <span class="text-sm font-medium text-gray-300">Python</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white/5 border border-white/10 hover:border-accent-purple hover:bg-accent-purple/10 transition-all duration-300 px-4 py-2 rounded-full cursor-default">
+                            <i class="devicon-javascript-plain colored text-lg"></i>
+                            <span class="text-sm font-medium text-gray-300">JavaScript</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white/5 border border-white/10 hover:border-accent-purple hover:bg-accent-purple/10 transition-all duration-300 px-4 py-2 rounded-full cursor-default">
+                            <i class="devicon-c-plain colored text-lg"></i>
+                            <span class="text-sm font-medium text-gray-300">C</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web -->
+                <div class="bg-card border border-white/5 rounded-2xl p-8 card-hover">
+                    <div class="flex items-center gap-3 mb-6">
+                        <i data-lucide="globe" class="text-accent-blue w-6 h-6"></i>
+                        <h3 class="text-xl font-bold text-white">Web</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="flex items-center gap-2 bg-white/5 border border-white/10 hover:border-accent-purple hover:bg-accent-purple/10 transition-all duration-300 px-4 py-2 rounded-full cursor-default">
+                            <i class="devicon-html5-plain colored text-lg"></i>
+                            <span class="text-sm font-medium text-gray-300">HTML5</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white/5 border border-white/10 hover:border-accent-purple hover:bg-accent-purple/10 transition-all duration-300 px-4 py-2 rounded-full cursor-default">
+                            <i class="devicon-css3-plain colored text-lg"></i>
+                            <span class="text-sm font-medium text-gray-300">CSS3</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white/5 border border-white/10 hover:border-accent-purple hover:bg-accent-purple/10 transition-all duration-300 px-4 py-2 rounded-full cursor-default">
+                            <i class="devicon-tailwindcss-plain colored text-lg"></i>
+                            <span class="text-sm font-medium text-gray-300">Tailwind CSS</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white/5 border border-white/10 hover:border-accent-purple hover:bg-accent-purple/10 transition-all duration-300 px-4 py-2 rounded-full cursor-default">
+                            <i class="devicon-react-original colored text-lg"></i>
+                            <span class="text-sm font-medium text-gray-300">React.js</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white/5 border border-white/10 hover:border-accent-purple hover:bg-accent-purple/10 transition-all duration-300 px-4 py-2 rounded-full cursor-default">
+                            <i class="devicon-nodejs-plain colored text-lg"></i>
+                            <span class="text-sm font-medium text-gray-300">Node.js</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white/5 border border-white/10 hover:border-accent-purple hover:bg-accent-purple/10 transition-all duration-300 px-4 py-2 rounded-full cursor-default">
+                            <i class="devicon-express-original text-lg"></i>
+                            <span class="text-sm font-medium text-gray-300">Express.js</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Database & Tools -->
+                <div class="bg-card border border-white/5 rounded-2xl p-8 card-hover">
+                    <div class="flex items-center gap-3 mb-6">
+                        <i data-lucide="database" class="text-accent-green w-6 h-6"></i>
+                        <h3 class="text-xl font-bold text-white">Database & Tools</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="flex items-center gap-2 bg-white/5 border border-white/10 hover:border-accent-purple hover:bg-accent-purple/10 transition-all duration-300 px-4 py-2 rounded-full cursor-default">
+                            <i class="devicon-mysql-plain colored text-lg"></i>
+                            <span class="text-sm font-medium text-gray-300">MySQL</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white/5 border border-white/10 hover:border-accent-purple hover:bg-accent-purple/10 transition-all duration-300 px-4 py-2 rounded-full cursor-default">
+                            <i class="devicon-github-original text-lg"></i>
+                            <span class="text-sm font-medium text-gray-300">GitHub</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white/5 border border-white/10 hover:border-accent-purple hover:bg-accent-purple/10 transition-all duration-300 px-4 py-2 rounded-full cursor-default">
+                            <i class="devicon-vscode-plain colored text-lg"></i>
+                            <span class="text-sm font-medium text-gray-300">VS Code</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Core CS -->
+                <div class="bg-card border border-white/5 rounded-2xl p-8 card-hover">
+                    <div class="flex items-center gap-3 mb-6">
+                        <i data-lucide="network" class="text-accent-purple w-6 h-6"></i>
+                        <h3 class="text-xl font-bold text-white">Core CS</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="flex items-center gap-2 bg-white/5 border border-white/10 hover:border-accent-purple hover:bg-accent-purple/10 transition-all duration-300 px-4 py-2 rounded-full cursor-default">
+                            <span class="text-lg">🧮</span>
+                            <span class="text-sm font-medium text-gray-300">DSA (BFS, DFS, Dijkstra, A*)</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white/5 border border-white/10 hover:border-accent-purple hover:bg-accent-purple/10 transition-all duration-300 px-4 py-2 rounded-full cursor-default">
+                            <span class="text-lg">🧩</span>
+                            <span class="text-sm font-medium text-gray-300">Object Oriented Programming</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI / ML -->
+                <div class="bg-card border border-white/5 rounded-2xl p-8 card-hover md:col-span-2">
+                    <div class="flex items-center gap-3 mb-6">
+                        <i data-lucide="brain" class="text-accent-blue w-6 h-6"></i>
+                        <h3 class="text-xl font-bold text-white">AI / ML</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="flex items-center gap-2 bg-white/5 border border-white/10 hover:border-accent-purple hover:bg-accent-purple/10 transition-all duration-300 px-4 py-2 rounded-full cursor-default">
+                            <i class="devicon-python-plain colored text-lg"></i>
+                            <span class="text-sm font-medium text-gray-300">Python</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white/5 border border-white/10 hover:border-accent-purple hover:bg-accent-purple/10 transition-all duration-300 px-4 py-2 rounded-full cursor-default">
+                            <i class="devicon-pandas-plain colored text-lg"></i>
+                            <span class="text-sm font-medium text-gray-300">Pandas</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white/5 border border-white/10 hover:border-accent-purple hover:bg-accent-purple/10 transition-all duration-300 px-4 py-2 rounded-full cursor-default">
+                            <i class="devicon-numpy-plain colored text-lg"></i>
+                            <span class="text-sm font-medium text-gray-300">NumPy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-24 relative z-10 reveal">
+            <h2 class="section-title text-white">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+                
+                <!-- Project 1 -->
+                <div class="bg-card border border-white/5 rounded-2xl overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-2 hover:border-white/10 hover:shadow-[0_15px_30px_rgba(0,0,0,0.4),0_0_20px_rgba(59,130,246,0.2)]">
+                    <div class="h-1.5 w-full bg-accent-blue"></div>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <h3 class="text-2xl font-bold text-white mb-4">Ocean Blue Dashboard</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-1">
+                            A web dashboard monitoring ocean parameters: oxygen levels, salinity, and fish activity. Features Firebase auth, real-time database, and interactive map-based visualizations.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="text-xs font-medium bg-white/5 text-gray-300 px-3 py-1 rounded-full">HTML5</span>
+                            <span class="text-xs font-medium bg-white/5 text-gray-300 px-3 py-1 rounded-full">CSS3</span>
+                            <span class="text-xs font-medium bg-white/5 text-gray-300 px-3 py-1 rounded-full">JavaScript</span>
+                            <span class="text-xs font-medium bg-white/5 text-gray-300 px-3 py-1 rounded-full">Firebase</span>
+                        </div>
+                    </div>
+                    <div class="px-8 py-5 bg-black/20 border-t border-white/5 flex gap-4">
+                        <a href="#" target="_blank" class="flex items-center gap-2 text-sm font-semibold text-gray-400 hover:text-white transition-colors">
+                            <i class="devicon-github-original text-lg"></i> GitHub
+                        </a>
+                        <a href="https://oceanblue-five.vercel.app/" target="_blank" class="flex items-center gap-2 text-sm font-semibold text-gray-400 hover:text-white transition-colors">
+                            <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-card border border-white/5 rounded-2xl overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-2 hover:border-white/10 hover:shadow-[0_15px_30px_rgba(0,0,0,0.4),0_0_20px_rgba(34,197,94,0.2)]">
+                    <div class="h-1.5 w-full bg-accent-green"></div>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <h3 class="text-2xl font-bold text-white mb-4">Smart Crop Recommendation</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-1">
+                            ML application recommending crops based on soil nutrients (NPK), rainfall, and temperature. Users input environmental parameters and receive instant crop suggestions.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="text-xs font-medium bg-white/5 text-gray-300 px-3 py-1 rounded-full">Python</span>
+                            <span class="text-xs font-medium bg-white/5 text-gray-300 px-3 py-1 rounded-full">Scikit-learn</span>
+                            <span class="text-xs font-medium bg-white/5 text-gray-300 px-3 py-1 rounded-full">Pandas</span>
+                            <span class="text-xs font-medium bg-white/5 text-gray-300 px-3 py-1 rounded-full">NumPy</span>
+                        </div>
+                    </div>
+                    <div class="px-8 py-5 bg-black/20 border-t border-white/5 flex gap-4">
+                        <a href="https://github.com/chaitanya2230/far-raghu-repo" target="_blank" class="flex items-center gap-2 text-sm font-semibold text-gray-400 hover:text-white transition-colors">
+                            <i class="devicon-github-original text-lg"></i> GitHub
+                        </a>
+                        <a href="https://team-explorers-upd.vercel.app/" target="_blank" class="flex items-center gap-2 text-sm font-semibold text-gray-400 hover:text-white transition-colors">
+                            <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-card border border-white/5 rounded-2xl overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-2 hover:border-white/10 hover:shadow-[0_15px_30px_rgba(0,0,0,0.4),0_0_20px_rgba(108,99,255,0.2)]">
+                    <div class="h-1.5 w-full bg-accent-purple"></div>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <h3 class="text-2xl font-bold text-white mb-4">Shortest Path & Quantum</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-1">
+                            Implemented and visualized Dijkstra and BFS algorithms. Studied quantum computing concepts related to graph traversal and compared classical vs theoretical quantum models.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="text-xs font-medium bg-white/5 text-gray-300 px-3 py-1 rounded-full">Python</span>
+                            <span class="text-xs font-medium bg-white/5 text-gray-300 px-3 py-1 rounded-full">Algorithms</span>
+                            <span class="text-xs font-medium bg-white/5 text-gray-300 px-3 py-1 rounded-full">Graph Theory</span>
+                        </div>
+                    </div>
+                    <div class="px-8 py-5 bg-black/20 border-t border-white/5 flex flex-wrap gap-x-4 gap-y-2">
+                        <a href="https://github.com/chaitanya2230/quantum-shortest-path-" target="_blank" class="flex items-center gap-2 text-sm font-semibold text-gray-400 hover:text-white transition-colors">
+                            <i class="devicon-github-original text-lg"></i> GitHub
+                        </a>
+                        <a href="https://short-path.onrender.com/phone.html" target="_blank" class="flex items-center gap-2 text-sm font-semibold text-gray-400 hover:text-white transition-colors">
+                            <i data-lucide="external-link" class="w-4 h-4"></i> User Demo
+                        </a>
+                        <a href="https://quantum-y9mz.onrender.com/" target="_blank" class="flex items-center gap-2 text-sm font-semibold text-gray-400 hover:text-white transition-colors">
+                            <i data-lucide="external-link" class="w-4 h-4"></i> Ambulance Demo
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Competitive Section -->
+        <section id="competitive" class="py-24 relative z-10 reveal">
+            <h2 class="section-title text-white">Competitive Programming</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                
+                <!-- LeetCode -->
+                <div class="bg-card border border-white/5 p-8 rounded-2xl card-hover relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-[#ffa116] rounded-full filter blur-[80px] opacity-10 group-hover:opacity-20 transition-opacity"></div>
+                    <div class="text-[#ffa116] mb-6">
+                        <i data-lucide="code" class="w-12 h-12" stroke-width="1.5"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-8">LeetCode</h3>
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <i data-lucide="check-circle-2" class="text-accent-purple w-5 h-5"></i>
+                            <span class="text-lg">100+ Problems Solved</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <i data-lucide="trophy" class="text-accent-purple w-5 h-5"></i>
+                            <span class="text-lg">Top 40% Ranking</span>
+                        </li>
+                    </ul>
+                    <a href="https://leetcode.com/u/M_CHAITANYA_SAI" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[#ffa116] font-semibold text-lg hover:gap-4 transition-all">
+                        View Profile <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
+
+                <!-- CodeChef -->
+                <div class="bg-card border border-white/5 p-8 rounded-2xl card-hover relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-[#5B4638] rounded-full filter blur-[80px] opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                    <div class="text-white mb-6 bg-[#5B4638] inline-block p-3 rounded-xl">
+                        <svg viewBox="0 0 24 24" fill="currentColor" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.003 4.293L1.517 9.878l10.486 5.584 10.485-5.584-10.485-5.585zm0 15.414l-10.486-5.585v4.542l10.486 5.585 10.485-5.585v-4.542l-10.485 5.585z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-8">CodeChef</h3>
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <i data-lucide="check-circle-2" class="text-accent-purple w-5 h-5"></i>
+                            <span class="text-lg">250+ Problems Solved</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <i data-lucide="star" class="text-accent-purple w-5 h-5"></i>
+                            <span class="text-lg">Rating: 1300</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <i data-lucide="medal" class="text-accent-purple w-5 h-5"></i>
+                            <span class="text-lg">50+ Contests</span>
+                        </li>
+                    </ul>
+                    <a href="https://www.codechef.com/users/chaitu_2007" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-white font-semibold text-lg hover:gap-4 transition-all">
+                        View Profile <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
+
+                <!-- HackerRank -->
+                <div class="bg-card border border-white/5 p-8 rounded-2xl card-hover relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-[#2EC866] rounded-full filter blur-[80px] opacity-10 group-hover:opacity-20 transition-opacity"></div>
+                    <div class="text-[#2EC866] mb-6">
+                        <i class="devicon-hackerrank-plain text-5xl"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-8">HackerRank</h3>
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <i data-lucide="star" class="text-accent-purple w-5 h-5"></i>
+                            <span class="text-lg">5* in SQL</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="inline-flex items-center gap-2 text-[#2EC866] font-semibold text-lg hover:gap-4 transition-all">
+                        View Profile <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Certifications -->
+        <section id="certifications" class="py-24 relative z-10 reveal">
+            <h2 class="section-title text-white">Certifications</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+                
+                <div class="bg-card border border-white/5 p-6 rounded-xl flex items-start gap-5 card-hover">
+                    <div class="w-12 h-12 rounded-lg bg-accent-purple/10 flex items-center justify-center text-accent-purple shrink-0">
+                        <i data-lucide="award" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-white leading-tight mb-2">100 Days of Code: Python Bootcamp</h4>
+                        <p class="text-gray-400 text-sm mb-3">Udemy</p>
+                        <div class="flex items-center gap-1.5 text-accent-green text-xs font-semibold">
+                            <i data-lucide="badge-check" class="w-3.5 h-3.5"></i> Verified
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-card border border-white/5 p-6 rounded-xl flex items-start gap-5 card-hover">
+                    <div class="w-12 h-12 rounded-lg bg-accent-purple/10 flex items-center justify-center text-accent-purple shrink-0">
+                        <i data-lucide="award" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-white leading-tight mb-2">HTML, CSS & JavaScript Essentials</h4>
+                        <p class="text-gray-400 text-sm mb-3">Cisco Networking Academy</p>
+                        <div class="flex items-center gap-1.5 text-accent-green text-xs font-semibold">
+                            <i data-lucide="badge-check" class="w-3.5 h-3.5"></i> Verified
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-card border border-white/5 p-6 rounded-xl flex items-start gap-5 card-hover">
+                    <div class="w-12 h-12 rounded-lg bg-accent-purple/10 flex items-center justify-center text-accent-purple shrink-0">
+                        <i data-lucide="award" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-white leading-tight mb-2">Database Management Systems</h4>
+                        <p class="text-gray-400 text-sm mb-3">Infosys Springboard</p>
+                        <div class="flex items-center gap-1.5 text-accent-green text-xs font-semibold">
+                            <i data-lucide="badge-check" class="w-3.5 h-3.5"></i> Verified
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-card border border-white/5 p-6 rounded-xl flex items-start gap-5 card-hover">
+                    <div class="w-12 h-12 rounded-lg bg-accent-purple/10 flex items-center justify-center text-accent-purple shrink-0">
+                        <i data-lucide="award" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-white leading-tight mb-2">Generative AI</h4>
+                        <p class="text-gray-400 text-sm mb-3">Jenny Lectures</p>
+                        <div class="flex items-center gap-1.5 text-accent-green text-xs font-semibold">
+                            <i data-lucide="badge-check" class="w-3.5 h-3.5"></i> Verified
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 relative z-10 reveal">
+            <h2 class="section-title text-white">Get In Touch</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-16">
+                <!-- Left Info -->
+                <div>
+                    <p class="text-xl text-gray-300 leading-relaxed mb-10">
+                        Feel free to reach out for collaborations, opportunities, or just a quick chat!
+                    </p>
+                    <div class="space-y-6 mb-12">
+                        <a href="mailto:chaitanya2230@gmail.com" class="flex items-center gap-4 text-gray-300 hover:text-white transition-colors group">
+                            <div class="w-12 h-12 rounded-full bg-card border border-white/10 flex items-center justify-center text-accent-purple group-hover:bg-accent-purple group-hover:text-white transition-all">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-lg">chaitanya2230@gmail.com</span>
+                        </a>
+                        <a href="tel:+916302779299" class="flex items-center gap-4 text-gray-300 hover:text-white transition-colors group">
+                            <div class="w-12 h-12 rounded-full bg-card border border-white/10 flex items-center justify-center text-accent-purple group-hover:bg-accent-purple group-hover:text-white transition-all">
+                                <i data-lucide="phone" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-lg">+91 6302779299</span>
+                        </a>
+                        <div class="flex items-center gap-4 text-gray-300 group">
+                            <div class="w-12 h-12 rounded-full bg-card border border-white/10 flex items-center justify-center text-accent-purple transition-all">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-lg">Visakhapatnam, Andhra Pradesh</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-sm uppercase tracking-wider text-gray-500 font-semibold mb-4">Social Profiles</h4>
+                        <div class="flex gap-4">
+                            <a href="https://www.linkedin.com/in/chaitanya2230" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-lg bg-card border border-white/10 flex items-center justify-center text-gray-400 hover:bg-accent-purple hover:text-white hover:border-accent-purple hover:-translate-y-1 transition-all duration-300">
+                                <i class="devicon-linkedin-plain text-2xl"></i>
+                            </a>
+                            <a href="https://github.com/chaitanya2230" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-lg bg-card border border-white/10 flex items-center justify-center text-gray-400 hover:bg-accent-purple hover:text-white hover:border-accent-purple hover:-translate-y-1 transition-all duration-300">
+                                <i class="devicon-github-original text-2xl"></i>
+                            </a>
+                            <a href="https://leetcode.com/u/M_CHAITANYA_SAI" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-lg bg-card border border-white/10 flex items-center justify-center text-gray-400 hover:bg-accent-purple hover:text-white hover:border-accent-purple hover:-translate-y-1 transition-all duration-300">
+                                <i data-lucide="code-2" class="w-[22px] h-[22px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Form -->
+                <div class="bg-card border border-white/10 p-8 rounded-2xl shadow-2xl">
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm text-gray-400 mb-2">Name</label>
+                            <input type="text" id="name" name="name" required class="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent-purple transition-colors" placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm text-gray-400 mb-2">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent-purple transition-colors" placeholder="john@example.com">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm text-gray-400 mb-2">Message</label>
+                            <textarea id="message" name="message" required rows="5" class="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent-purple transition-colors resize-none" placeholder="Hi Chaitanya, I'd like to talk about..."></textarea>
+                        </div>
+                        <button id="submit-btn" type="submit" class="w-full bg-accent-purple hover:bg-purple-600 text-white font-semibold py-4 rounded-lg flex items-center justify-center gap-2 transition-all duration-300">
+                            <span id="btn-text">Send Message</span>
+                            <i id="btn-icon" data-lucide="send" class="w-5 h-5"></i>
+                        </button>
+                        <p id="success-msg" class="text-accent-green text-center font-medium mt-4 hidden">Message sent successfully!</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 mt-20 relative z-10 bg-black/20">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <a href="#home" class="text-2xl font-extrabold tracking-tight text-white mb-2 inline-block">
+                    Chaitanya<span class="text-accent-purple">.</span>
+                </a>
+                <p class="text-gray-500 text-sm">
+                    Madimi Chaitanya Sai. Built with passion.
+                </p>
+            </div>
+            <div class="flex gap-6">
+                <a href="https://www.linkedin.com/in/chaitanya2230" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-accent-purple transition-colors">
+                    <i class="devicon-linkedin-plain text-xl"></i>
+                </a>
+                <a href="https://github.com/chaitanya2230" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-accent-purple transition-colors">
+                    <i class="devicon-github-original text-xl"></i>
+                </a>
+                <a href="https://leetcode.com/u/M_CHAITANYA_SAI" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-accent-purple transition-colors">
+                    <i data-lucide="code-2" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>
